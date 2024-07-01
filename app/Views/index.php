@@ -15,8 +15,10 @@
 Home
 <?= $this->endSection() ?>
 
+<!-- Start section header -->
 <?= $this->section('header') ?>
 <?= $this->include('templates/frontend/header') ?>
+<!-- End Section header -->
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
@@ -25,39 +27,19 @@ Home
 <section class="container d-flex flex-column py-5">
 	<h3 class="mx-auto">Feature Jobs</h3>
 	<div class="d-flex flex-row justify-content-around pt-5">
+		<?php foreach ($feature_jobs as $feature_job) : ?>
 		<?= view(
-			'components/feature_job_card',
-			[
-				'company_name' => 'Careerhub.io',
-				'job_position' => 'Software Developer',
-				'salary' => '$1000-$1500',
-				'work_time' => 'Part Time',
-				'image_url' => 'test.com',
-				'tag' => 'Backend'
-			]
-		) ?>
-		<?= view(
-			'components/feature_job_card',
-			[
-				'company_name' => 'ITE Company',
-				'job_position' => 'Video Editor',
-				'salary' => '$500-$800',
-				'work_time' => 'Full Time',
-				'image_url' => 'test.com',
-				'tag' => 'Editor'
-			]
-		) ?>
-		<?= view(
-			'components/feature_job_card',
-			[
-				'company_name' => 'SC Media',
-				'job_position' => 'Web Developer',
-				'salary' => '$500-$1000',
-				'work_time' => 'Full Time',
-				'image_url' => 'test.com',
-				'tag' => 'Backend'
-			]
-		) ?>
+				'components/feature_job_card',
+				[
+					'company_name' => $feature_job->company_name,
+					'job_position' => $feature_job->job_position,
+					'salary' => $feature_job->salary,
+					'work_time' => $feature_job->work_time,
+					'image_url' => $feature_job->image_url,
+					'tag' => 'Backend'
+				]
+			) ?>
+		<?php endforeach; ?>
 	</div>
 </section>
 <!-- End Feature Jobs -->
@@ -66,73 +48,20 @@ Home
 <section class="container d-flex flex-column py-5">
 	<h3>Recent Jobs</h3>
 	<div class="py-4">
-		<?= view(
-			'components/recent_job_card',
-			[
-				'company_name' => 'Careerhub.io',
-				'job_position' => 'Software Developer',
-				'salary' => '$1000-$1500',
-				'work_time' => 'Part Time',
-				'image_url' => 'test.com',
-				'tag' => 'Backend'
-			]
-		) ?>
-		<?= view(
-			'components/recent_job_card',
-			[
-				'company_name' => 'ITE Company',
-				'job_position' => 'Video Editor',
-				'salary' => '$500-$800',
-				'work_time' => 'Full Time',
-				'image_url' => 'test.com',
-				'tag' => 'Editor'
-			]
-		) ?>
-		<?= view(
-			'components/recent_job_card',
-			[
-				'company_name' => 'SC Media',
-				'job_position' => 'Web Developer',
-				'salary' => '$500-$1000',
-				'work_time' => 'Full Time',
-				'image_url' => 'test.com',
-				'tag' => 'Backend'
-			]
-		) ?>
-		<?= view(
-			'components/recent_job_card',
-			[
 
-				'company_name' => 'Careerhub.io',
-				'job_position' => 'Software Developer',
-				'salary' => '$1000-$1500',
-				'work_time' => 'Part Time',
-				'image_url' => 'test.com',
-				'tag' => 'Backend'
-			]
-		) ?>
+		<?php foreach ($recent_jobs as $recent_job) : ?>
 		<?= view(
-			'components/recent_job_card',
-			[
-				'company_name' => 'Careerhub.io',
-				'job_position' => 'Software Developer',
-				'salary' => '$1000-$1500',
-				'work_time' => 'Part Time',
-				'image_url' => 'test.com',
-				'tag' => 'Backend'
-			]
-		) ?>
-		<?= view(
-			'components/recent_job_card',
-			[
-				'company_name' => 'Careerhub.io',
-				'job_position' => 'Software Developer',
-				'salary' => '$1000-$1500',
-				'work_time' => 'Part Time',
-				'image_url' => 'test.com',
-				'tag' => 'Backend'
-			]
-		) ?>
+				'components/recent_job_card',
+				[
+					'company_name' => $recent_job->company_name,
+					'job_position' => $recent_job->job_position,
+					'salary' => $recent_job->salary,
+					'work_time' => $recent_job->work_time,
+					'image_url' => $recent_job->image_url,
+					'tag' => 'Backend'
+				]
+			) ?>
+		<?php endforeach; ?>
 	</div>
 </section>
 <!-- End Recent Jobs -->

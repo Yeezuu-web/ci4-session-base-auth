@@ -25,8 +25,8 @@ $uri = service('uri');
 		</ul>
 
 		<div>
-			<a href="#" class="btn btn-outline-primary">Login</a>
-			<a href="#" class="btn btn-primary">Register</a>
+			<a href="/login" class="btn btn-outline-primary">Login</a>
+			<a href="/register" class="btn btn-primary">Register</a>
 		</div>
 	</div>
 </nav>
